@@ -1,12 +1,28 @@
 import React from "react";
+import { useState } from "react";
+
 
 function Input(props){
-    return (
+  const [text, setText]=useState('');
+  const DoOnChange=(event)=>{
+    setText(event.target.value);
 
+  };
+  const clickInpButton=()=>{
+    setText(text.toUpperCase());
+  }
+  
+
+    return (
+     <>
+    <h3>{props.heading}</h3>
     <div className="mb-3">
-      <label htmlFor="exampleFormControlTextarea1" className="form-label" >Enter Text to Analyze</label>
-      <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" value={props.value}></textarea>
+      <div className="mb-3">
+      <textarea className="form-control" onChange={DoOnChange} name="form-control" value={text} id="MyBox" rows="8" ></textarea>
+      </div>
+      <button type="button" onClick={clickInpButton} className="btn btn-primary">To Uppercase</button>
     </div>
+     </>
       );
 }
 export default Input;
