@@ -69,9 +69,19 @@ function Input(props){
         console.error("Failed to copy text:", err)
       });
     }
+  };
 
+  const CapText=()=>{
+    const capitText=text.split(' ').map(word=>word.charAt(0).toUpperCase()+word.slice(1)).join(' ');
+
+    setText(capitText);
   }
 
+  const Remsp=()=>{
+    let newText=text.split(/[ ]+/);
+    setText(newText.join(" "));
+    
+  }
 
     return (
      <>
@@ -89,7 +99,12 @@ function Input(props){
 
       <button type="button" onClick={clickInpButtonLower} className="btn btn-primary mx-1">To Lowercase</button>
 
+      <button type="button" onClick={CapText} className="btn btn-primary mx-1">Capitalize</button>
+
       <button type="button" onClick={EmLExtact} className="btn btn-primary mx-1">Extact Email</button>
+
+      <button type="button" onClick={Remsp} className="btn btn-primary mx-1">Remove Spaces</button>
+
 
       <button type="button" onClick={hSave} className="btn btn-primary mx-1">Save</button>
 
