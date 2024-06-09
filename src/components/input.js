@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 
 
@@ -6,6 +6,7 @@ function Input(props){
   const [text, setText]=useState('');
   const [emails, setEmails]= useState([]);
   const [paragraphCount, setParagraphCount]=useState(0);
+  const ImpRef=useRef(null);
   
 
   const CountPeragraph=(text)=>{
@@ -59,6 +60,19 @@ function Input(props){
   }
 
 
+  const CopyText=()=>{
+    if(ImpRef.current){
+      navigator.clipboard.writeText(ImpRef.current.value)
+      .then(()=>{
+        alert("Text Copied to clipboard!");
+      }).catch((err)=>{
+        console.error("Failed to copy text:", err)
+      });
+    }
+
+  }
+
+
     return (
      <>
      <div className="container">
@@ -66,7 +80,7 @@ function Input(props){
     <div className="mb-3">
       <div className="mb-3">
 
-      <textarea className="form-control" onChange={DoOnChange} name="form-control" value={text} id="MyBox" rows="8" ></textarea>
+      <textarea className="form-control" onChange={DoOnChange} ref={ImpRef} name="form-control" value={text} id="MyBox" rows="8" ></textarea>
       </div>
 
       <button type="button" onClick={OnClickCLs} className="btn btn-primary mx-1">Clear text</button>
@@ -78,6 +92,9 @@ function Input(props){
       <button type="button" onClick={EmLExtact} className="btn btn-primary mx-1">Extact Email</button>
 
       <button type="button" onClick={hSave} className="btn btn-primary mx-1">Save</button>
+
+      <button type="button" onClick={CopyText} className="btn btn-primary mx-1">Copy</button>
+
     </div>
      </div>
      <div className="container my-2">
