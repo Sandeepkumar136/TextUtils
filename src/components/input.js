@@ -7,6 +7,7 @@ function Input(props){
   const [emails, setEmails]= useState([]);
   const [paragraphCount, setParagraphCount]=useState(0);
   const ImpRef=useRef(null);
+  // const [jsxOutput, SetjsxOutput]=useState('');
   
 
   const CountPeragraph=(text)=>{
@@ -82,6 +83,12 @@ function Input(props){
     setText(newText.join(" "));
     
   }
+  const Conjsx=()=>{
+    let jsx=text.replace(/class=/g, 'className=');
+    jsx=jsx.replace(/for=/g, 'htmlFor=');
+
+    setText(jsx);
+  }
 
     return (
      <>
@@ -102,6 +109,8 @@ function Input(props){
       <button type="button" onClick={CapText} className="btn btn-primary mx-1">Capitalize</button>
 
       <button type="button" onClick={EmLExtact} className="btn btn-primary mx-1">Extact Email</button>
+
+      <button type="button" onClick={Conjsx} className="btn btn-primary mx-1">Convert in JSX</button>
 
       <button type="button" onClick={Remsp} className="btn btn-primary mx-1">Remove Spaces</button>
 
