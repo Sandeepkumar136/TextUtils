@@ -100,24 +100,24 @@ function Input(props){
       <textarea className="form-control" onChange={DoOnChange} ref={ImpRef} name="form-control" value={text} id="MyBox" rows="8" ></textarea>
       </div>
 
-      <button type="button" onClick={OnClickCLs} className="btn btn-primary mx-1">Clear text</button>
+      <button type="button" onClick={OnClickCLs} className="btn btn-primary m-2">Clear text</button>
 
-      <button type="button" onClick={clickInpButton} className="btn btn-primary mx-1">To Uppercase</button>
+      <button type="button" onClick={clickInpButton} className="btn btn-primary m-2">To Uppercase</button>
 
-      <button type="button" onClick={clickInpButtonLower} className="btn btn-primary mx-1">To Lowercase</button>
+      <button type="button" onClick={clickInpButtonLower} className="btn btn-primary m-2">To Lowercase</button>
 
-      <button type="button" onClick={CapText} className="btn btn-primary mx-1">Capitalize</button>
+      <button type="button" onClick={CapText} className="btn btn-primary m-2">Capitalize</button>
 
-      <button type="button" onClick={EmLExtact} className="btn btn-primary mx-1">Extact Email</button>
+      <button type="button" onClick={EmLExtact} className="btn btn-primary m-2">Extact Email</button>
 
-      <button type="button" onClick={Conjsx} className="btn btn-primary mx-1">Convert in JSX</button>
+      <button type="button" onClick={Conjsx} className="btn btn-primary m-2">Convert in JSX</button>
 
-      <button type="button" onClick={Remsp} className="btn btn-primary mx-1">Remove Spaces</button>
+      <button type="button" onClick={Remsp} className="btn btn-primary m-2">Remove Spaces</button>
 
 
-      <button type="button" onClick={hSave} className="btn btn-primary mx-1">Save</button>
+      <button type="button" onClick={hSave} className="btn btn-primary m-2">Save</button>
 
-      <button type="button" onClick={CopyText} className="btn btn-primary mx-1">Copy</button>
+      <button type="button" onClick={CopyText} className="btn btn-primary m-2">Copy</button>
 
     </div>
      </div>
